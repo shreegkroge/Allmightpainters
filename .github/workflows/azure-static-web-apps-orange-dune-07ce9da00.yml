@@ -12,11 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build And Deploy
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token: ${{ 148539304c6c37796b05981a8edc596ffc4ec99345c2df4b1ba4bced6adc6d1907-736ab337-7617-4989-86cd-f2d8a3f8eaa0000080707ce9da00
+      -- name: Deploy to Azure Static Web Apps
+  uses: Azure/static-web-apps-deploy@v1
+  env:
+    AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+  with:
+    # other parameters...
  }}
           action: "upload"
           app_location: "/"
